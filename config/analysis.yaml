@@ -1,0 +1,238 @@
+# Analysis parameters. Every parameter the code uses lives here; relative paths are resolved against the
+# repository root. Keys under `runtime` change no output value.
+
+project:
+  name: one_child_seven_paradigms
+  seed: 20261102                      # master seed; every random generator is derived from it (stats/rng.py)
+
+paths:
+  data_root: path/to/ds006780         # BIDS root of OpenNeuro ds006780 v1.0.0
+  derivatives: derivatives            # preprocessed recordings, spectra and feature bank
+  results: results                    # analysis outputs
+
+dataset:
+  name_contains: SFARI_EEG
+  expected_version_doi: "doi:10.18112/openneuro.ds006780.v1.0.0"
+  seated_paradigms: [ASSR, AVSRT, Beepflash, FAST, IC, Restingstate]
+  motor_paradigm: motor
+  group_map: {"ASD": ASD, "TD": TD, "ASD SIBLING": SIB}
+  phenotype_columns: [age, sex, handedness, fsiq, srs2_total_t, mabc_total_ss, cpt_response_style, ados_css, medication]
+  # Group and outcome columns of participants.tsv; age, sex, handedness and medication are covariates.
+  outcome_columns: [group, fsiq, srs2_total_t, mabc_total_ss, cpt_response_style, ados_css]
+  restart_min_fraction: 0.20          # an earlier run of a task is dropped if it has < 20% of the expected trials
+  expected_trials: {ASSR: 400, AVSRT: 400, Beepflash: 400, FAST: 720, IC: 540}
+  trial_patterns:                     # regexes on events.tsv trial_type that count as one trial (stimulus onset)
+    ASSR: "^(27|40)_Hz_(Standard|Oddball)$"
+    AVSRT: "^(Auditory|Visual|Audiovisual)_stim$"
+    Beepflash: "^(Auditory|Visual)_Cue$"
+    FAST: "^(Face|Object)_(upright|inverted)(_shadow)?$"
+    IC: "^(Illusory|Non_Illusory)_contours$"
+  response_pattern: "^Response_button$"
+
+blocks:
+  # Block definitions, all from events (never from time alone).
+  ASSR: {rule: marker, marker: "^Block_(27|40)_Hz_Standard$"}
+  AVSRT: {rule: trial_count, size: 100}
+  Beepflash: {rule: marker, marker: "^Block_start$"}
+  FAST: {rule: category_chunks, category_regex: "^(Face|Object)", size: 60}   # split at face/object changes,
+                                      #   then into chunks of 60 (every block is social or non-social)
+  IC: {rule: separator, marker: "^Pause$"}
+  Restingstate: {rule: rest_marker, marker: "^Recording_start$"}   # one block per Recording_start, to the next
+                                      #   marker or the end of the run; a run without the marker gives no block
+  min_trials_per_block: 20            # a task block with fewer trials is merged into the previous block
+  min_rest_block_s: 30.0              # a rest run shorter than this is not a block
+  pad_s: 1.0                          # block span = first trial onset - pad to last trial onset + trial window + pad
+  # Alternative definition (robustness rerun, Table S8): consecutive equal-duration blocks of clean data.
+  alternative: {rule: equal_duration, window_s: 60.0, max_blocks: 6}
+
+preprocessing:
+  resample_sfreq: 256.0
+  bandpass: {l_freq: 0.5, h_freq: 45.0, fir_design: firwin, fir_window: hamming, phase: zero}
+  line_freq: 60.0                     # handled by the 45-Hz low-pass (no notch in the analysis copy)
+  montage: biosemi64
+  exg_channels: [EXG1, EXG2, EXG3, EXG4, EXG5, EXG6, EXG7, EXG8]   # typed misc; never EEG
+  exg_unconnected: {rail_v: -0.25, max_sd_uv: 2.0}   # per recording: median raw < -250 mV or 1-40 Hz SD < 2 uV
+  crop_margin_s: 2.0                  # task recordings are cropped to [first event - m, last event + m]
+  segments:                           # span rules: rail / flat spans, BioSemi pause joins (status bit 16)
+    rail_threshold_v: -0.25
+    rail: {pad_s: 0.5, merge_gap_s: 1.0, min_duration_s: 0.0}
+    flat_max_abs_diff_uv: 0.001
+    flat: {pad_s: 0.0, merge_gap_s: 0.0, min_duration_s: 0.5}
+    join_bit: 16
+    min_valid_span_s: auto            # auto = the longest per-span FIR kernel (0.5-Hz high-pass: 6.6 s)
+  residual: {window_s: 1.0, ptp_uv: 200.0}   # after ASR: 1-s windows above this are BAD_residual
+  bad_channels:                       # PyPREP NoisyChannels in a robust-reference loop
+    criteria: [nan_flat, deviation, correlation, ransac]
+    deviation_threshold: 5.0
+    correlation_secs: 1.0
+    correlation_threshold: 0.4
+    correlation_frac_bad: 0.01
+    correlation_min_bad_windows: 5
+    ransac: {n_samples: 50, sample_prop: 0.25, corr_thresh: 0.75, frac_bad: 0.4, corr_window_secs: 5.0}
+    saturation: {threshold_v: 0.25, max_frac: 0.001}
+    detection_band: [1.0, 100.0]      # detection copy: 1-100 Hz, notched at 60/120 Hz, decimated to 256 Hz
+    detection_lowpass_hz: 30.0        # PyPREP sees the copy additionally low-passed here (broadband temporal /
+                                      #   frontal EMG would otherwise fail the correlation criterion on intact
+                                      #   channels); null = no extra low-pass. The ICA fit keeps the 1-100 Hz copy
+    max_iterations: 4
+    max_bad_fraction: 0.15            # recording unusable if more EEG channels are bad
+    exclude_blinks:                   # blink periods are left out of the PyPREP detection data only
+      enabled: true
+      channels: [Fp1, Fp2]            #   frontal proxy = mean of these on the 1-100 Hz copy
+      z: 5.0                          #   robust z (median, 1.4826 MAD over valid samples) of |proxy| above this
+      pad_s: 0.3                      #   each blink sample widened by this on both sides
+      max_fraction: 0.4               #   cap on all detection exclusions (blinks + whole-head artefacts)
+    exclude_global_artefacts:         # whole-head artefact windows (median over channels of per-channel robust z
+      enabled: false                  #   of 1-s log RMS > z) left out of the PyPREP detection data only
+      window_s: 1.0
+      z: 3.0
+      pad_s: 0.5
+  ica:
+    method: picard
+    fit_params: {extended: true, ortho: false}
+    max_iter: 1000
+    fit_band: [1.0, 100.0]            # ICLabel expects 1-100 Hz, average reference
+    min_samples_factor: 20            # n_components <= sqrt(n_samples / k)
+    fit_reject_ptp_uv: 1000.0
+    iclabel_rule: argmax_and_threshold
+    eye_validation:                   # an argmax-eye component with p_eye < strict_p is removed only if its time
+      strict_p: 0.8                   #   course is eye-locked: blink ratio (mean |source| inside / outside detected
+      blink_ratio: 2.0                #   blinks) >= blink_ratio, or |r| with HEOG (EXG1 - EXG2, 1-15 Hz) >= heog_r
+      heog_r: 0.4
+    iclabel_exclude: {"eye blink": 0.0, "muscle artifact": 0.8}   # eye: top class eye; muscle: top class and
+                                                                   #   p >= 0.8
+    alpha_veto:                       # spare excluded components with a posterior alpha peak
+      band_hz: [7.0, 13.0]
+      min_peak_db: 3.0
+      aperiodic_fit_hz: [2.0, 30.0]
+      min_posterior_share: 0.5
+      posterior_channels: [P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, Pz, PO3, PO4, PO7, PO8, POz, O1, O2, Oz]
+  asr:
+    enabled: true
+    cutoff: 20.0                      # conservative (EEGLAB default 20; lower = more aggressive)
+    calibration_s: 60.0               # calibrated on the cleanest 60 s (1-s windows ranked by robust channel z)
+    window_s: 1.0
+    repaired_threshold: 0.05          # a sample counts as repaired if ||x_asr - x|| > 5% of ||x||
+  epochs: {tmin: -0.2, tmax: 0.8, baseline: [-0.2, 0.0], reject_ptp_uv: 200.0}
+  minimum_retained: {rest_s: 60.0, evoked_trials: 150}
+  diagnostics_subjects: 5
+
+features:
+  exclude_band_hz: [35.0, 45.0]       # ASSR 40-Hz drive: excluded from every shared family in every paradigm
+  segment_s: 2.0                      # continuous data cut into 2-s segments; segments touching BAD spans dropped
+  max_gap_s: 5.0                      # task blocks: segments inside an inter-trial gap longer than this are dropped
+  spectral:
+    welch_window_s: 2.0
+    welch_overlap: 0.5
+    fmin: 2.0
+    fmax: 34.5                        # 35-45 Hz excluded -> 2-34.5 Hz at 0.5 Hz
+    logpow_bin_hz: 1.0                # identification vectors use 1-Hz bins (2..34 Hz) per channel
+    specparam:
+      freq_range: [2.0, 34.0]
+      peak_width_limits: [1.0, 8.0]
+      max_n_peaks: 6
+      min_peak_height: 0.05
+      peak_threshold: 2.0
+      aperiodic_mode: auto            # auto: knee if the label-free fit check prefers it (rule below), else fixed
+      knee_rule: {min_median_r2_gain: 0.01}
+      min_r2: 0.90                    # fits below this are dropped
+    alpha_band: [7.0, 13.0]
+    beta_band: [14.0, 30.0]
+  bands: {theta: [4.0, 7.0], alpha: [8.0, 13.0], beta: [14.0, 30.0]}
+  covariance:
+    estimator: lwf
+    shrinkage_floor: 0.05             # gamma = max(gamma_LW, floor) on the trace-scaled identity
+    reference: grand_riemann_mean     # tangent space at the Riemannian mean of all blocks
+  broadband: [1.0, 34.5]              # broadband covariance (35-45 Hz excluded as in every shared family)
+  wpli: {debiased: true, segment_s: 2.0}
+  evoked:
+    reference: average
+    # FAST (Vanneau et al.): N170 at P7/P8, 170-200 ms; non-target trials; baseline -200 to -50 ms
+    fast_n170: {channels: {left: [P7], right: [P8]}, latency_window_s: [0.13, 0.23],
+                amplitude_window_s: [0.17, 0.20], baseline_s: [-0.2, -0.05]}
+    # AVSRT (Vanneau et al.): AV - (A+V) at 145-165 ms over a fixed left centro-parietal ROI; baseline -50 to +20 ms
+    avsrt_msi: {window_s: [0.145, 0.165], channels: [C1, C3, CP1, CP3, CP5, P1, P3], baseline_s: [-0.05, 0.02]}
+    # IC effect: illusory minus non-illusory difference wave, most negative point in 100-250 ms
+    ic_effect: {channels: [O1, O2, PO3, PO4, PO7, PO8], window_s: [0.10, 0.25], baseline_s: [-0.1, 0.0]}
+    # Beep-Flash: cue-locked posterior alpha modulation index (auditory cue - visual cue) / sum, 8-13 Hz
+    beepflash_alpha: {channels: [O1, Oz, O2, PO3, POz, PO4, PO7, PO8], cue_window_s: [0.5, 1.0], band_hz: [8.0, 13.0]}
+    # ASSR (Darrell et al.): mean 180-250 ms at FC3/FCz/FC4, TP7/TP8 reference, baseline -200 to 0 ms, standards
+    assr: {channels: [FC3, FCz, FC4], reference: [TP7, TP8], broadband_window_s: [0.18, 0.25],
+           baseline_s: [-0.2, 0.0], itpc_bands_hz: {"40": [38.0, 42.0], "27": [25.0, 29.0]}, itpc_window_s: [0.2, 0.5]}
+    rt_window_s: [0.1, 1.5]           # AVSRT response window; also used for target hits in the other tasks
+  variability: {dss_components: 1, bootstrap: 200, equalise_trials: true}
+
+identification:
+  standardise: zscore_within_paradigm # each feature z-scored across the compared children within each paradigm
+  n_permutations: 2000
+  split_half: odd_even_blocks
+  regress_covariates: [age, sex]
+  primary_family: spectral_logpow     # log power: main family of identification and self-identifiability
+  floor_bootstrap: 2000               # per-child (family - comparator) identification-rate difference
+  floor_signflip: 10000
+  h2_bootstrap: 2000
+  equivalence_bound_g: 0.5            # self-identifiability equivalence bound (Hedges g), 90% CI
+
+variance:
+  estimator: reml_with_mom_fallback   # REML (MixedLM, crossed VCs) for ROI features; MoM for every channel map
+  n_bootstrap: 1000
+  fdr_alpha: 0.05
+  h1b_features: [aperiodic_exponent, aperiodic_offset, periodic_alpha]
+  h1b_roi: [O1, Oz, O2, PO3, PO4, PO7, PO8]   # posterior region of interest
+
+latent:
+  method: mofa
+  max_factors: 15
+  drop_factor_threshold: 0.01         # MOFA+ drops factors explaining < 1% variance in every view
+  active_r2: 0.01                     # factor active in a view if it explains >= 1% of that view's variance
+  active_r2_sensitivity: [0.02, 0.05]
+  stability_match_r: 0.7              # a bootstrap factor "recovers" a reference factor if |r(loadings)| > 0.7
+  max_failed_fraction: 0.2            # fall back to concatenated PCA if MOFA+ fails in more than 20% of fits
+  view_pca_components: 10             # per view and family: PCA to <= 10 components inside training folds
+  n_bootstrap: 200
+  convergence_mode: medium
+  fallback: concat_pca
+
+prediction:
+  outer_folds: 5
+  repeats: 20
+  inner_folds: 5
+  n_permutations: 1000
+  permutation_repeats: 5              # permutation null uses 5 x 5 outer CV; observed statistic recomputed alike
+  n_bootstrap: 2000
+  logistic_c: [0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0, 100.0]
+  ridge_alpha: [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0]
+  targets: [asd_vs_td, srs2_total_t, mabc_total_ss, fsiq]
+  covariates: [age, sex, fsiq, medication_class, retained_data, qc_bad_channels, qc_asr_fraction]
+  calibration_bins: 10
+
+encoder:                              # subject-contrastive encoder (Additional file 1, Supplementary Methods S3)
+  segments_per_view: 24               # 2-s segments per child and paradigm, decimated to 128 Hz
+  embedding_dim: 64                   # ShallowConvNet trunk output, used for evaluation
+  projection_dim: 32                  # projection head, used only by the contrastive loss
+  temperature: 0.1                    # NT-Xent; positives = same child, two different paradigms
+  steps: 1500
+  batch_children: 32
+  lr: 0.001
+  weight_decay: 0.001
+  noise_sd: 0.05                      # Gaussian noise on z-scored segments (training only)
+  repeats: 20                         # outer repeats of the autistic-vs-TD folds, as the ladder; one encoder per fold
+
+stats:
+  ci_level: 0.95
+  h2_permutations: 10000
+
+motor:                                # standing motor paradigm: Brain Products, BrainVision files, units V
+  asr_cutoff: 10.0                    # more aggressive ASR than seated (20) for gait-related motion
+  walking_min_s: 120.0                # runs longer than this are walking runs; shorter ones standing
+  min_block_s: 30.0                   # one block per run of at least this length
+
+reproduction:                         # published group effects (Table S15)
+  rest_channels: [P1, P2, P3, P4, P5, P6, P7, P8, Pz]
+  rest_block: first_valid             # the published rest analysis used one 1-min run; all blocks as a secondary
+  ordinal_codes: {ASD: -1, SIB: 0, TD: 1}
+
+runtime:
+  n_jobs: 8
+  threads_per_worker: 1
+  log_level: INFO

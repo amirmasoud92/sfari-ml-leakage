@@ -1,0 +1,37 @@
+source_paradigm,target_paradigm,comparison,identified_pct
+ASSR,ASSR,within-paradigm split half,100
+ASSR,AVSRT,cross-paradigm,95.4128
+ASSR,Beep-Flash,cross-paradigm,95
+ASSR,FAST,cross-paradigm,95.283
+ASSR,IC,cross-paradigm,94.5946
+ASSR,Rest,cross-paradigm,97.3214
+AVSRT,ASSR,cross-paradigm,98.1651
+AVSRT,AVSRT,within-paradigm split half,100
+AVSRT,Beep-Flash,cross-paradigm,94.0594
+AVSRT,FAST,cross-paradigm,94.3396
+AVSRT,IC,cross-paradigm,95.4545
+AVSRT,Rest,cross-paradigm,99.1071
+Beep-Flash,ASSR,cross-paradigm,94
+Beep-Flash,AVSRT,cross-paradigm,96.0396
+Beep-Flash,Beep-Flash,within-paradigm split half,100
+Beep-Flash,FAST,cross-paradigm,96.9388
+Beep-Flash,IC,cross-paradigm,94.1176
+Beep-Flash,Rest,cross-paradigm,94.2308
+FAST,ASSR,cross-paradigm,96.2264
+FAST,AVSRT,cross-paradigm,98.1132
+FAST,Beep-Flash,cross-paradigm,97.9592
+FAST,FAST,within-paradigm split half,100
+FAST,IC,cross-paradigm,96.2617
+FAST,Rest,cross-paradigm,95.5357
+IC,ASSR,cross-paradigm,93.6937
+IC,AVSRT,cross-paradigm,97.2727
+IC,Beep-Flash,cross-paradigm,93.1373
+IC,FAST,cross-paradigm,94.3925
+IC,IC,within-paradigm split half,100
+IC,Rest,cross-paradigm,97.3684
+Rest,ASSR,cross-paradigm,96.4286
+Rest,AVSRT,cross-paradigm,100
+Rest,Beep-Flash,cross-paradigm,94.2308
+Rest,FAST,cross-paradigm,96.4286
+Rest,IC,cross-paradigm,97.3684
+Rest,Rest,within-paradigm split half,99.1736

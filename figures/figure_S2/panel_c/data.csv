@@ -1,0 +1,4 @@
+representation,slope_r_per_hour,ci95_lo,ci95_hi
+Log power,-0.0126303,-0.0174972,-0.00776331
+Shape,-0.0102765,-0.0144514,-0.00610156
+Covariance,-0.0240464,-0.0300017,-0.0180911

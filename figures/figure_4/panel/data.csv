@@ -1,0 +1,7 @@
+model,feature_set,auc,ci95_lo,ci95_hi,interval,estimate
+All covariates,covariates,0.77102,0.610891,0.931149,null-calibrated 95% interval,mean within-fold AUC
+Demographic only,covariates,0.675102,0.53831,0.805135,child-bootstrap 95% CI,pooled AUC
+Data quality only,covariates,0.662857,0.524123,0.789243,child-bootstrap 95% CI,pooled AUC
+17 candidate markers,EEG,0.589119,0.435942,0.742296,estimate ± 1.96 SD of label-permuted runs,mean within-fold AUC
+All EEG features,EEG,0.565714,0.401436,0.729993,null-calibrated 95% interval,mean within-fold AUC
+EEG + covariates,EEG,0.588367,,,none computed,mean within-fold AUC

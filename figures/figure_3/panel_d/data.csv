@@ -1,0 +1,5 @@
+network,scheme,auc_level,auc,ci95_low,ci95_high
+EEGNet,kept whole,child,0.44,0.3,0.58
+EEGNet,segments split,segment,0.83,0.79,0.86
+ShallowConvNet,kept whole,child,0.36,0.24,0.5
+ShallowConvNet,segments split,segment,0.94,0.93,0.95

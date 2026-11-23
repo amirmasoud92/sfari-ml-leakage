@@ -1,0 +1,17 @@
+marker,marker_type,reliability_td,reliability_autistic
+ASSR 40 Hz ITPC,evoked,0.9683123112,0.9203655319
+ASSR 27 Hz ITPC,evoked,0.9041990669,0.9003879726
+ASSR 40 Hz transient,evoked,0.868047001,0.8890541973
+ASSR 27 Hz transient,evoked,0.6806035789,0.7926380727
+Multisensory index,evoked,0.0521082377,0.4482256439
+N170 latency,evoked,0.4710572485,0.8515988364
+Face inversion,evoked,0.5762134805,0.6466459749
+Illusory contour,evoked,0.007024456831,0.756995057
+Cued alpha change,evoked,0.6868359636,0.2715474243
+Reaction time,behaviour,0.9543548028,0.9016363013
+RT variability,behaviour,0.7577379145,0.6890965829
+Rest periodic alpha,spectral,0.9784145399,0.9855073179
+Rest alpha frequency,spectral,0.9753570887,0.9451909251
+Aperiodic exponent,spectral,0.9094014473,0.9574434856
+Aperiodic offset,spectral,0.9578022403,0.9849511719
+Alpha rest − task,spectral,0.6950937108,0.800142119

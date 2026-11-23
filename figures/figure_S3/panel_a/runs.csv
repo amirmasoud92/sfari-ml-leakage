@@ -1,0 +1,241 @@
+series,k,run,auc_child
+from training children,0,0,0.6187755102040816
+from training children,1,0,0.6179591836734695
+from training children,2,0,0.6155102040816327
+from training children,4,0,0.6106122448979592
+from training children,8,0,0.6122448979591837
+from training children,16,0,0.6081632653061225
+from training children,0,1,0.46448979591836737
+from training children,1,1,0.46448979591836737
+from training children,2,1,0.4604081632653061
+from training children,4,1,0.46285714285714286
+from training children,8,1,0.4661224489795919
+from training children,16,1,0.4620408163265306
+from training children,0,2,0.4653061224489796
+from training children,1,2,0.4636734693877551
+from training children,2,2,0.4620408163265306
+from training children,4,2,0.4653061224489796
+from training children,8,2,0.47020408163265304
+from training children,16,2,0.46775510204081633
+from training children,0,3,0.6016326530612245
+from training children,1,3,0.5983673469387755
+from training children,2,3,0.603265306122449
+from training children,4,3,0.6024489795918367
+from training children,8,3,0.5975510204081633
+from training children,16,3,0.5991836734693878
+from training children,0,4,0.5534693877551021
+from training children,1,4,0.5542857142857143
+from training children,2,4,0.5526530612244898
+from training children,4,4,0.5518367346938775
+from training children,8,4,0.5518367346938775
+from training children,16,4,0.5518367346938775
+from training children,0,5,0.39265306122448973
+from training children,1,5,0.3918367346938776
+from training children,2,5,0.3902040816326531
+from training children,4,5,0.39428571428571424
+from training children,8,5,0.39591836734693875
+from training children,16,5,0.3918367346938776
+from training children,0,6,0.2840816326530612
+from training children,1,6,0.27918367346938777
+from training children,2,6,0.2751020408163265
+from training children,4,6,0.2914285714285714
+from training children,8,6,0.28897959183673466
+from training children,16,6,0.2873469387755102
+from training children,0,7,0.6138775510204082
+from training children,1,7,0.616326530612245
+from training children,2,7,0.616326530612245
+from training children,4,7,0.616326530612245
+from training children,8,7,0.6212244897959184
+from training children,16,7,0.6171428571428572
+from training children,0,8,0.4146938775510204
+from training children,1,8,0.42122448979591837
+from training children,2,8,0.42122448979591837
+from training children,4,8,0.4204081632653061
+from training children,8,8,0.42122448979591837
+from training children,16,8,0.4220408163265306
+from training children,0,9,0.5175510204081633
+from training children,1,9,0.5208163265306123
+from training children,2,9,0.52
+from training children,4,9,0.5240816326530613
+from training children,8,9,0.5257142857142857
+from training children,16,9,0.5224489795918368
+from training children,0,10,0.49469387755102034
+from training children,1,10,0.4946938775510204
+from training children,2,10,0.5004081632653061
+from training children,4,10,0.4995918367346939
+from training children,8,10,0.5028571428571429
+from training children,16,10,0.4906122448979592
+from training children,0,11,0.5142857142857142
+from training children,1,11,0.5118367346938776
+from training children,2,11,0.5151020408163265
+from training children,4,11,0.5102040816326531
+from training children,8,11,0.506938775510204
+from training children,16,11,0.5053061224489795
+from training children,0,12,0.44571428571428573
+from training children,1,12,0.4448979591836735
+from training children,2,12,0.4473469387755102
+from training children,4,12,0.45061224489795915
+from training children,8,12,0.44653061224489793
+from training children,16,12,0.4497959183673469
+from training children,0,13,0.6146938775510205
+from training children,1,13,0.6130612244897958
+from training children,2,13,0.6138775510204081
+from training children,4,13,0.6081632653061224
+from training children,8,13,0.6130612244897958
+from training children,16,13,0.6146938775510205
+from training children,0,14,0.5436734693877551
+from training children,1,14,0.5444897959183673
+from training children,2,14,0.5461224489795918
+from training children,4,14,0.5436734693877552
+from training children,8,14,0.5428571428571428
+from training children,16,14,0.5453061224489796
+from training children,0,15,0.5036734693877551
+from training children,1,15,0.5012244897959184
+from training children,2,15,0.5061224489795918
+from training children,4,15,0.5069387755102042
+from training children,8,15,0.5004081632653061
+from training children,16,15,0.49632653061224485
+from training children,0,16,0.5444897959183673
+from training children,1,16,0.5453061224489797
+from training children,2,16,0.5477551020408162
+from training children,4,16,0.5477551020408163
+from training children,8,16,0.546122448979592
+from training children,16,16,0.5493877551020409
+from training children,0,17,0.49959183673469393
+from training children,1,17,0.5004081632653061
+from training children,2,17,0.4987755102040816
+from training children,4,17,0.5012244897959184
+from training children,8,17,0.4979591836734694
+from training children,16,17,0.4987755102040816
+from training children,0,18,0.6310204081632653
+from training children,1,18,0.6277551020408163
+from training children,2,18,0.6302040816326531
+from training children,4,18,0.6318367346938776
+from training children,8,18,0.6359183673469387
+from training children,16,18,0.6367346938775511
+from training children,0,19,0.44734693877551024
+from training children,1,19,0.44816326530612244
+from training children,2,19,0.44816326530612244
+from training children,4,19,0.44897959183673464
+from training children,8,19,0.4440816326530612
+from training children,16,19,0.4473469387755102
+from the test child,0,0,0.6187755102040816
+from the test child,1,0,0.6293877551020409
+from the test child,2,0,0.633469387755102
+from the test child,4,0,0.6595918367346938
+from the test child,8,0,0.7061224489795919
+from the test child,16,0,0.8073469387755102
+from the test child,0,1,0.46448979591836737
+from the test child,1,1,0.47510204081632657
+from the test child,2,1,0.4824489795918367
+from the test child,4,1,0.5093877551020407
+from the test child,8,1,0.56
+from the test child,16,1,0.6277551020408163
+from the test child,0,2,0.4653061224489796
+from the test child,1,2,0.48163265306122444
+from the test child,2,2,0.49551020408163265
+from the test child,4,2,0.52
+from the test child,8,2,0.5657142857142857
+from the test child,16,2,0.6636734693877551
+from the test child,0,3,0.6016326530612245
+from the test child,1,3,0.6081632653061224
+from the test child,2,3,0.6155102040816327
+from the test child,4,3,0.6310204081632653
+from the test child,8,3,0.6579591836734694
+from the test child,16,3,0.7110204081632653
+from the test child,0,4,0.5534693877551021
+from the test child,1,4,0.5657142857142857
+from the test child,2,4,0.5763265306122449
+from the test child,4,4,0.5991836734693877
+from the test child,8,4,0.6457142857142857
+from the test child,16,4,0.723265306122449
+from the test child,0,5,0.39265306122448973
+from the test child,1,5,0.4
+from the test child,2,5,0.4146938775510204
+from the test child,4,5,0.43918367346938775
+from the test child,8,5,0.4848979591836735
+from the test child,16,5,0.5836734693877552
+from the test child,0,6,0.2840816326530612
+from the test child,1,6,0.2946938775510204
+from the test child,2,6,0.30367346938775513
+from the test child,4,6,0.3224489795918367
+from the test child,8,6,0.38775510204081637
+from the test child,16,6,0.4987755102040816
+from the test child,0,7,0.6138775510204082
+from the test child,1,7,0.6236734693877551
+from the test child,2,7,0.6399999999999999
+from the test child,4,7,0.6628571428571428
+from the test child,8,7,0.7142857142857142
+from the test child,16,7,0.7951020408163265
+from the test child,0,8,0.4146938775510204
+from the test child,1,8,0.42367346938775513
+from the test child,2,8,0.4359183673469388
+from the test child,4,8,0.45877551020408164
+from the test child,8,8,0.49714285714285716
+from the test child,16,8,0.5575510204081633
+from the test child,0,9,0.5175510204081633
+from the test child,1,9,0.5322448979591837
+from the test child,2,9,0.5420408163265306
+from the test child,4,9,0.5657142857142857
+from the test child,8,9,0.6122448979591837
+from the test child,16,9,0.713469387755102
+from the test child,0,10,0.49469387755102034
+from the test child,1,10,0.5077551020408163
+from the test child,2,10,0.5240816326530612
+from the test child,4,10,0.563265306122449
+from the test child,8,10,0.6318367346938776
+from the test child,16,10,0.7322448979591837
+from the test child,0,11,0.5142857142857142
+from the test child,1,11,0.5216326530612245
+from the test child,2,11,0.5322448979591836
+from the test child,4,11,0.5395918367346939
+from the test child,8,11,0.566530612244898
+from the test child,16,11,0.6661224489795918
+from the test child,0,12,0.44571428571428573
+from the test child,1,12,0.45061224489795915
+from the test child,2,12,0.4620408163265306
+from the test child,4,12,0.4791836734693877
+from the test child,8,12,0.5093877551020408
+from the test child,16,12,0.5812244897959183
+from the test child,0,13,0.6146938775510205
+from the test child,1,13,0.6293877551020408
+from the test child,2,13,0.6424489795918368
+from the test child,4,13,0.6530612244897959
+from the test child,8,13,0.7044897959183674
+from the test child,16,13,0.7763265306122449
+from the test child,0,14,0.5436734693877551
+from the test child,1,14,0.5583673469387755
+from the test child,2,14,0.5738775510204082
+from the test child,4,14,0.6089795918367347
+from the test child,8,14,0.6677551020408163
+from the test child,16,14,0.7755102040816326
+from the test child,0,15,0.5036734693877551
+from the test child,1,15,0.516734693877551
+from the test child,2,15,0.5248979591836734
+from the test child,4,15,0.5493877551020407
+from the test child,8,15,0.5926530612244898
+from the test child,16,15,0.6726530612244899
+from the test child,0,16,0.5444897959183673
+from the test child,1,16,0.563265306122449
+from the test child,2,16,0.5730612244897959
+from the test child,4,16,0.5983673469387755
+from the test child,8,16,0.6448979591836734
+from the test child,16,16,0.7493877551020408
+from the test child,0,17,0.49959183673469393
+from the test child,1,17,0.5208163265306123
+from the test child,2,17,0.5371428571428571
+from the test child,4,17,0.5665306122448979
+from the test child,8,17,0.6269387755102042
+from the test child,16,17,0.7232653061224489
+from the test child,0,18,0.6310204081632653
+from the test child,1,18,0.6391836734693879
+from the test child,2,18,0.6489795918367347
+from the test child,4,18,0.6710204081632654
+from the test child,8,18,0.7004081632653061
+from the test child,16,18,0.7502040816326531
+from the test child,0,19,0.44734693877551024
+from the test child,1,19,0.4555102040816327
+from the test child,2,19,0.4653061224489796
+from the test child,4,19,0.483265306122449
+from the test child,8,19,0.5240816326530613
+from the test child,16,19,0.593469387755102

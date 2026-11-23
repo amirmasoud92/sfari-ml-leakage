@@ -1,0 +1,271 @@
+series,k,run,auc_child
+permuted labels,0,0,0.6081632653061225
+permuted labels,1,0,0.6171428571428572
+permuted labels,2,0,0.6277551020408163
+permuted labels,4,0,0.6514285714285715
+permuted labels,8,0,0.6889795918367346
+permuted labels,16,0,0.7779591836734694
+permuted labels,0,1,0.4620408163265306
+permuted labels,1,1,0.4726530612244898
+permuted labels,2,1,0.4791836734693877
+permuted labels,4,1,0.5036734693877551
+permuted labels,8,1,0.5510204081632654
+permuted labels,16,1,0.6155102040816326
+permuted labels,0,2,0.46775510204081633
+permuted labels,1,2,0.4848979591836735
+permuted labels,2,2,0.49632653061224485
+permuted labels,4,2,0.5159183673469389
+permuted labels,8,2,0.5551020408163265
+permuted labels,16,2,0.6448979591836734
+permuted labels,0,3,0.5991836734693878
+permuted labels,1,3,0.6081632653061225
+permuted labels,2,3,0.616326530612245
+permuted labels,4,3,0.6277551020408163
+permuted labels,8,3,0.6481632653061224
+permuted labels,16,3,0.7020408163265306
+permuted labels,0,4,0.5518367346938775
+permuted labels,1,4,0.563265306122449
+permuted labels,2,4,0.5738775510204082
+permuted labels,4,4,0.5983673469387755
+permuted labels,8,4,0.636734693877551
+permuted labels,16,4,0.706938775510204
+permuted labels,0,5,0.3918367346938776
+permuted labels,1,5,0.4024489795918368
+permuted labels,2,5,0.41224489795918373
+permuted labels,4,5,0.42775510204081635
+permuted labels,8,5,0.47836734693877553
+permuted labels,16,5,0.5624489795918367
+permuted labels,0,6,0.2873469387755102
+permuted labels,1,6,0.29714285714285715
+permuted labels,2,6,0.3053061224489796
+permuted labels,4,6,0.32326530612244897
+permuted labels,8,6,0.3787755102040816
+permuted labels,16,6,0.47346938775510206
+permuted labels,0,7,0.6171428571428572
+permuted labels,1,7,0.6253061224489795
+permuted labels,2,7,0.64
+permuted labels,4,7,0.6620408163265306
+permuted labels,8,7,0.7061224489795918
+permuted labels,16,7,0.7779591836734693
+permuted labels,0,8,0.4220408163265306
+permuted labels,1,8,0.4228571428571429
+permuted labels,2,8,0.43510204081632653
+permuted labels,4,8,0.4571428571428572
+permuted labels,8,8,0.4971428571428571
+permuted labels,16,8,0.5551020408163265
+permuted labels,0,9,0.5224489795918368
+permuted labels,1,9,0.5281632653061225
+permuted labels,2,9,0.540408163265306
+permuted labels,4,9,0.5624489795918368
+permuted labels,8,9,0.6057142857142856
+permuted labels,16,9,0.7028571428571428
+permuted labels,0,10,0.4906122448979592
+permuted labels,1,10,0.49551020408163265
+permuted labels,2,10,0.506938775510204
+permuted labels,4,10,0.5485714285714285
+permuted labels,8,10,0.6236734693877551
+permuted labels,16,10,0.7175510204081632
+permuted labels,0,11,0.5053061224489795
+permuted labels,1,11,0.516734693877551
+permuted labels,2,11,0.5240816326530612
+permuted labels,4,11,0.5371428571428571
+permuted labels,8,11,0.5689795918367347
+permuted labels,16,11,0.643265306122449
+permuted labels,0,12,0.4497959183673469
+permuted labels,1,12,0.4595918367346939
+permuted labels,2,12,0.4702040816326531
+permuted labels,4,12,0.4816326530612245
+permuted labels,8,12,0.506938775510204
+permuted labels,16,12,0.5730612244897959
+permuted labels,0,13,0.6146938775510205
+permuted labels,1,13,0.6277551020408164
+permuted labels,2,13,0.636734693877551
+permuted labels,4,13,0.6489795918367347
+permuted labels,8,13,0.6914285714285714
+permuted labels,16,13,0.7657142857142857
+permuted labels,0,14,0.5453061224489796
+permuted labels,1,14,0.5591836734693877
+permuted labels,2,14,0.5836734693877551
+permuted labels,4,14,0.6261224489795918
+permuted labels,8,14,0.6669387755102041
+permuted labels,16,14,0.763265306122449
+permuted labels,0,15,0.49632653061224485
+permuted labels,1,15,0.5077551020408163
+permuted labels,2,15,0.5110204081632653
+permuted labels,4,15,0.5322448979591837
+permuted labels,8,15,0.5746938775510204
+permuted labels,16,15,0.6538775510204081
+permuted labels,0,16,0.5493877551020409
+permuted labels,1,16,0.566530612244898
+permuted labels,2,16,0.5722448979591837
+permuted labels,4,16,0.5975510204081632
+permuted labels,8,16,0.6391836734693878
+permuted labels,16,16,0.7338775510204081
+permuted labels,0,17,0.4987755102040816
+permuted labels,1,17,0.5077551020408163
+permuted labels,2,17,0.5281632653061225
+permuted labels,4,17,0.5542857142857143
+permuted labels,8,17,0.6163265306122448
+permuted labels,16,17,0.7061224489795919
+permuted labels,0,18,0.6367346938775511
+permuted labels,1,18,0.6424489795918367
+permuted labels,2,18,0.6481632653061224
+permuted labels,4,18,0.6702040816326531
+permuted labels,8,18,0.6979591836734694
+permuted labels,16,18,0.7355102040816326
+permuted labels,0,19,0.4473469387755102
+permuted labels,1,19,0.45795918367346944
+permuted labels,2,19,0.46693877551020413
+permuted labels,4,19,0.48
+permuted labels,8,19,0.5159183673469387
+permuted labels,16,19,0.5812244897959185
+"permuted labels, other paradigms",0,0,0.4644897959183673
+"permuted labels, other paradigms",1,0,0.4693877551020408
+"permuted labels, other paradigms",2,0,0.48081632653061224
+"permuted labels, other paradigms",4,0,0.4791836734693877
+"permuted labels, other paradigms",8,0,0.5020408163265306
+"permuted labels, other paradigms",16,0,0.5510204081632653
+"permuted labels, other paradigms",0,1,0.5493877551020409
+"permuted labels, other paradigms",1,1,0.5575510204081632
+"permuted labels, other paradigms",2,1,0.5648979591836735
+"permuted labels, other paradigms",4,1,0.5951020408163264
+"permuted labels, other paradigms",8,1,0.6293877551020408
+"permuted labels, other paradigms",16,1,0.6889795918367346
+"permuted labels, other paradigms",0,2,0.37142857142857144
+"permuted labels, other paradigms",1,2,0.38448979591836735
+"permuted labels, other paradigms",2,2,0.40244897959183673
+"permuted labels, other paradigms",4,2,0.43020408163265306
+"permuted labels, other paradigms",8,2,0.4710204081632653
+"permuted labels, other paradigms",16,2,0.5583673469387755
+"permuted labels, other paradigms",0,3,0.5771428571428572
+"permuted labels, other paradigms",1,3,0.5885714285714285
+"permuted labels, other paradigms",2,3,0.5918367346938775
+"permuted labels, other paradigms",4,3,0.6048979591836734
+"permuted labels, other paradigms",8,3,0.623673469387755
+"permuted labels, other paradigms",16,3,0.6775510204081632
+"permuted labels, other paradigms",0,4,0.5755102040816327
+"permuted labels, other paradigms",1,4,0.5853061224489795
+"permuted labels, other paradigms",2,4,0.5951020408163266
+"permuted labels, other paradigms",4,4,0.6122448979591837
+"permuted labels, other paradigms",8,4,0.6473469387755102
+"permuted labels, other paradigms",16,4,0.7322448979591837
+"permuted labels, other paradigms",0,5,0.3787755102040816
+"permuted labels, other paradigms",1,5,0.38122448979591844
+"permuted labels, other paradigms",2,5,0.3853061224489796
+"permuted labels, other paradigms",4,5,0.40163265306122453
+"permuted labels, other paradigms",8,5,0.4310204081632653
+"permuted labels, other paradigms",16,5,0.5061224489795918
+"permuted labels, other paradigms",0,6,0.533061224489796
+"permuted labels, other paradigms",1,6,0.5404081632653062
+"permuted labels, other paradigms",2,6,0.5428571428571428
+"permuted labels, other paradigms",4,6,0.5575510204081632
+"permuted labels, other paradigms",8,6,0.5828571428571429
+"permuted labels, other paradigms",16,6,0.6595918367346939
+"permuted labels, other paradigms",0,7,0.5118367346938775
+"permuted labels, other paradigms",1,7,0.5240816326530612
+"permuted labels, other paradigms",2,7,0.5436734693877552
+"permuted labels, other paradigms",4,7,0.5591836734693878
+"permuted labels, other paradigms",8,7,0.586938775510204
+"permuted labels, other paradigms",16,7,0.6914285714285714
+"permuted labels, other paradigms",0,8,0.5257142857142857
+"permuted labels, other paradigms",1,8,0.5338775510204081
+"permuted labels, other paradigms",2,8,0.5453061224489795
+"permuted labels, other paradigms",4,8,0.5599999999999999
+"permuted labels, other paradigms",8,8,0.6130612244897959
+"permuted labels, other paradigms",16,8,0.6742857142857144
+"permuted labels, other paradigms",0,9,0.5755102040816326
+"permuted labels, other paradigms",1,9,0.5820408163265306
+"permuted labels, other paradigms",2,9,0.5828571428571429
+"permuted labels, other paradigms",4,9,0.5959183673469388
+"permuted labels, other paradigms",8,9,0.6342857142857142
+"permuted labels, other paradigms",16,9,0.6987755102040816
+"permuted labels, other paradigms",0,10,0.4285714285714286
+"permuted labels, other paradigms",1,10,0.4326530612244898
+"permuted labels, other paradigms",2,10,0.44081632653061226
+"permuted labels, other paradigms",4,10,0.4506122448979592
+"permuted labels, other paradigms",8,10,0.486530612244898
+"permuted labels, other paradigms",16,10,0.5583673469387755
+"permuted labels, other paradigms",0,11,0.5477551020408163
+"permuted labels, other paradigms",1,11,0.5599999999999999
+"permuted labels, other paradigms",2,11,0.5689795918367346
+"permuted labels, other paradigms",4,11,0.5844897959183672
+"permuted labels, other paradigms",8,11,0.6204081632653062
+"permuted labels, other paradigms",16,11,0.6799999999999999
+"permuted labels, other paradigms",0,12,0.4375510204081632
+"permuted labels, other paradigms",1,12,0.44571428571428573
+"permuted labels, other paradigms",2,12,0.4522448979591837
+"permuted labels, other paradigms",4,12,0.47591836734693876
+"permuted labels, other paradigms",8,12,0.5224489795918368
+"permuted labels, other paradigms",16,12,0.633469387755102
+"permuted labels, other paradigms",0,13,0.476734693877551
+"permuted labels, other paradigms",1,13,0.48
+"permuted labels, other paradigms",2,13,0.4873469387755102
+"permuted labels, other paradigms",4,13,0.5020408163265306
+"permuted labels, other paradigms",8,13,0.5469387755102041
+"permuted labels, other paradigms",16,13,0.6195918367346939
+"permuted labels, other paradigms",0,14,0.4000000000000001
+"permuted labels, other paradigms",1,14,0.40326530612244904
+"permuted labels, other paradigms",2,14,0.4155102040816327
+"permuted labels, other paradigms",4,14,0.4318367346938775
+"permuted labels, other paradigms",8,14,0.4767346938775511
+"permuted labels, other paradigms",16,14,0.5551020408163265
+"permuted labels, other paradigms",0,15,0.4097959183673469
+"permuted labels, other paradigms",1,15,0.4195918367346939
+"permuted labels, other paradigms",2,15,0.42693877551020404
+"permuted labels, other paradigms",4,15,0.43836734693877555
+"permuted labels, other paradigms",8,15,0.4791836734693877
+"permuted labels, other paradigms",16,15,0.5575510204081633
+"permuted labels, other paradigms",0,16,0.4040816326530612
+"permuted labels, other paradigms",1,16,0.4122448979591837
+"permuted labels, other paradigms",2,16,0.41877551020408166
+"permuted labels, other paradigms",4,16,0.43020408163265306
+"permuted labels, other paradigms",8,16,0.46857142857142864
+"permuted labels, other paradigms",16,16,0.5461224489795918
+"permuted labels, other paradigms",0,17,0.47346938775510206
+"permuted labels, other paradigms",1,17,0.48489795918367345
+"permuted labels, other paradigms",2,17,0.4987755102040816
+"permuted labels, other paradigms",4,17,0.5110204081632652
+"permuted labels, other paradigms",8,17,0.5493877551020407
+"permuted labels, other paradigms",16,17,0.6171428571428571
+"permuted labels, other paradigms",0,18,0.5126530612244898
+"permuted labels, other paradigms",1,18,0.523265306122449
+"permuted labels, other paradigms",2,18,0.5257142857142858
+"permuted labels, other paradigms",4,18,0.5428571428571428
+"permuted labels, other paradigms",8,18,0.5714285714285714
+"permuted labels, other paradigms",16,18,0.6277551020408163
+"permuted labels, other paradigms",0,19,0.3183673469387755
+"permuted labels, other paradigms",1,19,0.3281632653061225
+"permuted labels, other paradigms",2,19,0.32979591836734695
+"permuted labels, other paradigms",4,19,0.34775510204081633
+"permuted labels, other paradigms",8,19,0.37795918367346937
+"permuted labels, other paradigms",16,19,0.4595918367346939
+true labels,0,0,0.3934693877551021
+true labels,1,0,0.403265306122449
+true labels,2,0,0.4089795918367347
+true labels,4,0,0.43673469387755104
+true labels,8,0,0.4775510204081632
+true labels,16,0,0.5624489795918367
+true labels,0,1,0.4391836734693878
+true labels,1,1,0.4448979591836735
+true labels,2,1,0.4489795918367347
+true labels,4,1,0.46448979591836737
+true labels,8,1,0.4979591836734695
+true labels,16,1,0.6000000000000001
+true labels,0,2,0.43755102040816324
+true labels,1,2,0.4473469387755102
+true labels,2,2,0.46122448979591835
+true labels,4,2,0.48244897959183675
+true labels,8,2,0.5240816326530612
+true labels,16,2,0.6155102040816327
+true labels,0,3,0.4073469387755102
+true labels,1,3,0.41714285714285715
+true labels,2,3,0.42448979591836733
+true labels,4,3,0.4375510204081633
+true labels,8,3,0.4906122448979592
+true labels,16,3,0.5591836734693878
+true labels,0,4,0.4734693877551021
+true labels,1,4,0.483265306122449
+true labels,2,4,0.4946938775510204
+true labels,4,4,0.5159183673469387
+true labels,8,4,0.5412244897959183
+true labels,16,4,0.6179591836734694

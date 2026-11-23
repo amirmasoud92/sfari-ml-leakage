@@ -1,0 +1,9 @@
+control,kind,identified_pct,ci95_lo_pct,ci95_hi_pct,chance_pct,row_chance_pct
+Log power,signature,95.9494,94.299,97.4813,0.937133,
+Spectral shape,signature,96.0207,94.2963,97.4931,0.937133,
+Matched competitors,signature,98.1787,97.0821,99.0842,0.937133,6.4
+2–20 Hz only,signature,97.3948,95.9891,98.6355,0.937133,
+Surface Laplacian,signature,92.3933,90.0021,94.588,0.937133,
+Other amplifier,signature,80.6393,74.5113,86.3306,0.937133,
+"Other amplifier, shape",signature,82.5485,77.1347,87.3023,0.937133,
+External electrodes,external electrodes,60.615,55.9078,65.3626,0.937133,

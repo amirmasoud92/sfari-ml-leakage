@@ -1,0 +1,24 @@
+# Coding of the participants.tsv `medication` column (after merging `medication_dup` where the original is n/a).
+# Classes: none / stimulant / ssri / other / unknown. The stimulant and ssri flags are kept separately so that
+# combinations are not lost; a combination of stimulant and SSRI has class `ssri`.
+# Matching is on the exact stripped string; an unmapped string makes the loader fail (no silent default).
+classes:
+  "No": {class: none, stimulant: false, ssri: false}
+  "n/a": {class: unknown, stimulant: false, ssri: false}
+  "": {class: unknown, stimulant: false, ssri: false}
+  "Unknown": {class: unknown, stimulant: false, ssri: false}
+  "Methylphenidate": {class: stimulant, stimulant: true, ssri: false}
+  "Concerta 75mg": {class: stimulant, stimulant: true, ssri: false}
+  "Focalin 5 mg": {class: stimulant, stimulant: true, ssri: false}
+  "Focalin": {class: stimulant, stimulant: true, ssri: false}
+  "ADHD Meds": {class: stimulant, stimulant: true, ssri: false, note: "assumed stimulant; agent not named"}
+  "Sertraline 2ml": {class: ssri, stimulant: false, ssri: true}
+  "Stimulant + SSRI": {class: ssri, stimulant: true, ssri: true}
+  "Zoloft, Adderall": {class: ssri, stimulant: true, ssri: true}
+  "Vyvanse, Sertraline": {class: ssri, stimulant: true, ssri: true}
+  "Albuterol 2.5 mg/3 ml sol,ventolyn 90mcg, claritin 10mg": {class: other, stimulant: false, ssri: false}
+  "Oxybutynin 10mg 1x a day": {class: other, stimulant: false, ssri: false}
+  "Asthma inhaler": {class: other, stimulant: false, ssri: false}
+  "Meds for Allergy": {class: other, stimulant: false, ssri: false}
+  "Polyethelene Laxative": {class: other, stimulant: false, ssri: false}
+  "Albuterol for asthma, Diphenhydramine for eczema": {class: other, stimulant: false, ssri: false}

@@ -1,0 +1,8 @@
+# Muscle-artefact preprocessing variant (Additional file 1, Table S6): identical to analysis.yaml except that every
+# independent component whose top ICLabel class is muscle is removed at any probability (analysis.yaml: p >= 0.8).
+# Preprocessed as variant "muscle_argmax"; the ICA of the primary preprocessing is reused.
+inherits: analysis.yaml
+
+preprocessing:
+  ica:
+    iclabel_exclude: {"eye blink": 0.0, "muscle artifact": 0.0}

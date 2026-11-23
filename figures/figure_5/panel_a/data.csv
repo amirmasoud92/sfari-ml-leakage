@@ -1,0 +1,17 @@
+marker,marker_type,split_half_reliability,abs_hedges_g_adjusted,annotation
+ASSR 40 Hz ITPC,evoked,0.9438778807,0.1399249789,
+ASSR 27 Hz ITPC,evoked,0.900587145,0.1227958401,
+ASSR 40 Hz transient,evoked,0.8884975881,0.7120761375,ASSR 40 Hz
+ASSR 27 Hz transient,evoked,0.7593262921,0.4653282865,
+Multisensory index,evoked,0.3317414815,0.1824165687,Multisensory
+N170 latency,evoked,0.7430560333,0.02272359979,
+Face inversion,evoked,0.6279666644,0.2880242989,
+Illusory contour,evoked,0.5420631572,0.209242144,
+Cued alpha change,evoked,0.5316138493,0.1752280122,
+Reaction time,behaviour,0.9257496393,0.3436735781,
+RT variability,behaviour,0.7106533347,0.1415247758,
+Rest periodic alpha,spectral,0.9830672591,0.3789585467,Rest alpha
+Rest alpha frequency,spectral,0.9555847748,0.2324790935,
+Aperiodic exponent,spectral,0.940203849,0.2190299628,
+Aperiodic offset,spectral,0.9743960833,0.2082209292,
+Alpha rest − task,spectral,0.7731348168,0.4914336226,Alpha rest − task

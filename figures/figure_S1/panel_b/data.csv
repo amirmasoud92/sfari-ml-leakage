@@ -1,0 +1,12 @@
+feature_family,role,identified_pct,ci95_lo_pct,ci95_hi_pct,chance_pct
+Log power,feature family,95.9494,94.2025,97.504,0.937133
+"Covariance, theta",feature family,94.9037,92.987,96.5923,0.937133
+"Covariance, alpha",feature family,93.8156,91.9088,95.6361,0.937133
+"Covariance, beta",feature family,89.245,86.3352,91.8022,0.937133
+Periodic,feature family,85.1714,81.6804,88.353,0.937133
+Aperiodic,feature family,81.7661,78.1624,85.201,0.937133
+"wPLI, alpha",feature family,61.6861,56.4086,66.9601,0.937133
+"wPLI, beta",feature family,47.7775,41.1734,54.3276,0.937133
+"wPLI, theta",feature family,42.7091,37.0321,48.1126,0.937133
+Sensor covariance,comparator,93.8652,91.8783,95.6942,0.937133
+External electrodes,comparator,60.615,56.0418,65.463,0.937133

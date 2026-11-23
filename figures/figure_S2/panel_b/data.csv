@@ -1,0 +1,5 @@
+representation,visit,margin_points,ci95_lo_points,ci95_hi_points
+log power,same,1.74225,-0.625709,4.4144
+log power,other,9.46429,-0.831225,20.6713
+spectral shape,same,1.00057,-1.63192,4.01049
+spectral shape,other,15.8879,3.54117,27.2884
